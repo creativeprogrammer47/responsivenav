@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden; 
+    overflow: scroll;  
+}
+nav{
+    height: 5rem;
+    width: 100vw;
+    background: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: transform .3s;
+    transition: background 250ms ease-in; 
+}
+.scrolled{
+    background-color: #0000007a;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.404);
+}
+
+.logo{
+    text-align: center;
+    flex: 0.1;
+    color:#ffff00 ;
+    margin-top: 17px;
+}
+.navbar{
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 4.1vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    flex: 0.70;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 1.5vw;
+    color : #ffff00;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0px;
+    font-weight: bolder;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0%;
+    background-color: #ffffffb4;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+    margin-top: 15px;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+.nav-buttons{
+    padding:2vh 2vw;
+    flex: 0.29;   
+}
+.nav-buttons li {
+    list-style: none;
+}
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #ffff00;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+.home{
+    height: 100vh;
+    width: 100%;
+    background-color: #6F33D1;
+}
+.about{
+    height: 200vh;
+    width: 100%;
+    background-color: #FF4A54;
+}
+@media screen and (max-width: 600px){
+    nav{
+        position: fixed;
+        z-index: 3;
+        color: white;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .logo{
+        margin-right: 115vw;
+    }
+    .nav-links {
+        flex-direction: column;
+    }
+    .nav-links li {
+        margin-bottom: 100px;
+    }
+    .nav-links li a{
+        color: #ffff00;
+    }
+    .nav-links li a::before {
+        background-color: #ffffffa2;
+    }
+    .navbar{
+        position: fixed;
+        background: #121212;
+        backdrop-filter: blur(150px);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .navbar.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .navbar li{
+        opacity: 0;
+        justify-content: space-evenly;
+    }
+    .navbar li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .navbar li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .navbar li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .navbar li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .navbar li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .navbar li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
